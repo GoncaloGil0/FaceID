@@ -73,5 +73,5 @@ while True:
             
             a = a + 1
       
-cv2.show("Webcam", imagem)
+    cv2.imshow("Webcam", imagem)
             
