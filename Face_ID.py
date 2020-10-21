@@ -30,6 +30,7 @@ encodelistKnown = findEncondings(imagens)
 cap = cv2.VideoCapture(0) #usar camera
 
 i = 0
+a = 0
 
 while True:
 
@@ -56,27 +57,21 @@ while True:
             print(nome_ecra,i)
 
             #fazer aparecer retangulos na cara das pessoas
-            #y1,x2,y2,x1 = faceloc
-            #cv2.rectangle(imagem,(x1,y1),(x2,y2),(0,255,0),2) #caixa a volta da cara 
-            #cv2.putText(imagem, nome_ecra, (x1+6,y2+26), cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255), 2) #nome da pessoa
+            y1,x2,y2,x1 = faceloc
+            cv2.rectangle(imagem,(x1,y1),(x2,y2),(0,255,0),2) #caixa a volta da cara 
+            cv2.putText(imagem, nome_ecra, (x1+6,y2+26), cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255), 2) #nome da pessoa
 
-            i = i +1
+            i = i + 1
 
         else:
             pass
-            #nome_ecra = "UNKNOWN"
-            #y1,x2,y2,x1 = faceloc
-            #cv2.rectangle(imagem,(x1,y1),(x2,y2),(0,0,255),2) #caixa a volta da cara 
-            #cv2.putText(imagem, nome_ecra, (x1+6,y2+26), cv2.FONT_HERSHEY_COMPLEX,1,(0,0,255), 2) #nome da pessoa
-
-    if nome_ecra == Nome :
-        
-        entrada.show()
-        unlock.close()
-        time.sleep(5)
-        unlock.show()
-        entrada.close()
-
-
-    else:
-        pass
+            nome_ecra = "UNKNOWN"
+            y1,x2,y2,x1 = faceloc
+            cv2.rectangle(imagem,(x1,y1),(x2,y2),(0,0,255),2) #caixa a volta da cara 
+            cv2.putText(imagem, nome_ecra, (x1+6,y2+26), cv2.FONT_HERSHEY_COMPLEX,1,(0,0,255), 2) #nome da pessoa
+            print(nome_ecra,a)
+            
+            a = a + 1
+      
+cv2.show("Webcam", imagem)
+            
