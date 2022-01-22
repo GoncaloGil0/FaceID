@@ -16,14 +16,6 @@ import time
 import sqlite3
 import Data_Base_Config 
 
-# database name = users // table name = users e logs
-# MODULES
-    # pip install PyQt5
-    # pip install mysql-connector
-    # pip install opencv-python
-    # pip install face_recognition
-    # pip install db-sqlite3
-
 #conecção com o DataBase
 data = sqlite3.connect('DataBase.db')
 
